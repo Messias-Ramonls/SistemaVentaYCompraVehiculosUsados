@@ -30,7 +30,7 @@ public class Comprador extends Usuario {
     }
 
     public void realizarOferta(Venta venta, double cantidadOfertada, String path) { //Este metodo recibe un objeto de tipo venta y un double que representa la cantidad ofertada.
-        int codigo = Codigo.generarCodigo(path);//Mediante el archivo ofertas.txt determinamos el codigo de tipo entero.
+        int codigo = Oferta.generarCodigo(path);//Mediante el archivo ofertas.txt determinamos el codigo de tipo entero.
         Oferta oferta = new Oferta(codigo, venta.getCodVenta(), this.correoE, cantidadOfertada);// Creamos un objeto de tipo oferta que recibe el codigo determinado perviamente, el codigo de venta, la cedula del comprador y la cantidad ofertada. 
         oferta.registrarOfertas(path);// Luego la oferta la procedemos a registrar utilizando un metodo de la clase Oferta.
     }

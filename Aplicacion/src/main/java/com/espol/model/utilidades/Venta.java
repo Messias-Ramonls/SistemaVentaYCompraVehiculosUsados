@@ -141,6 +141,21 @@ public class Venta implements Serializable {
     }
 //da el formato en el que se quiere se impriman o se retornen los datos
 
+    public static int generarCodigo(String archivo) {
+        int codigo = 0;
+        try {
+            ArrayList<Venta> ventas = Venta.desearilzarVentas(archivo);
+            for (Venta v : ventas) {
+                codigo = v.getCodVenta();
+            }
+            return codigo + 1;
+            
+        } catch (Exception e) {
+            System.out.println(e.getMessage());//manda un mensaje en caso de qu no se encuentre el archivo
+        }
+        return 1; //retorna un numero entero en caso de que haya una excepcion 
+    }
+
     @Override
     public String toString() {
         return codVenta + "," + correo + "," + placaVehiculo;

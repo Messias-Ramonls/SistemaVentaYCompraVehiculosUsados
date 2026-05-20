@@ -30,7 +30,7 @@ public class Vendedor extends Usuario {
 
     public void registrarVenta(Vehiculo vehiculo, String pathVehiculo,String pathVenta) {//El metodo registrarVenta recibe un objeto de tipo Vehiculo
         vehiculo.registrarVehiculo(pathVehiculo);//Este vehiculo se lo procede a registar utilizando un metodo de la clase vehiculo
-        int codigo = Codigo.generarCodigo(pathVenta);//Se determina el codigo con el metodo generarCodigo de la clase Codigo que recibe el archivo ventas.txt
+        int codigo = Venta.generarCodigo(pathVenta);//Se determina el codigo con el metodo generarCodigo de la clase Codigo que recibe el archivo ventas.txt
         Venta v = new Venta(codigo, this.correoE, vehiculo.getPlaca());//Se crea un objeto de tipo Venta que recibe el codigo generado anteriormente, la cedula del vendedor y la placa del vehiculo
         v.registrarVentas(pathVenta);//Se procede a registrar este objeto v con un metodo de la clase venta
     }
